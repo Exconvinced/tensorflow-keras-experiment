@@ -1,11 +1,28 @@
 ## My CS50AI Tensorflow Experiment
+
+### Table of Contents
+- [Overview](#overview)
+- [Video Demonstration](#video-demonstration)
+- [Table of Contents](#table-of-contents)
+- [Preliminaries](#preliminaries)
+- [Effects of changing parameters](#effects-of-changing-parameters)
+- [Effects of adding copies of identical layers](#effects-of-adding-copies-of-identical-layers)
+- [The final model](#the-final-model)
+- [Conclusion](#conclusion)
+
 ### Overview
 
 In this machine learning experiment, we train a model on an image dataset (provided by CS50AI) called [German Traffic Sign Recognition Benchmark (GTSRB)](http://benchmark.ini.rub.de/?section=gtsrb&subsection=news) using Tensorflow Keras. 
 
 By default, the training is run on the computer CPU, but it is possible to leverage the computing power of any supported Nvidia GPUs with some prerequisites installed: CUDA Runtime and CUDNN. Stable Diffusion, a popular free text-to-image diffusion model which I am well-acquainted with, is known to heavily rely on the GPU to speed up compute times. 
 
-For now, we benchmark the program on the CPU. A video demo is available [here](https://youtu.be/ZVDJKppr9TQ)
+For now, we benchmark the program on the CPU. 
+
+### Video Demonstration
+Watch the video demo on YouTube [here](https://youtu.be/ZVDJKppr9TQ).
+[![Watch the video](./preview/thumbnail.png)](https://youtu.be/ZVDJKppr9TQ)
+
+
 
 ### Preliminaries
 

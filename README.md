@@ -9,6 +9,7 @@
 - [Effects of adding copies of identical layers](#effects-of-adding-copies-of-identical-layers)
 - [The final model](#the-final-model)
 - [Conclusion](#conclusion)
+- [Experiment Data](#experiment-data)
 
 ### Overview
 
@@ -157,6 +158,31 @@ def get_model():
     model.add(layers.Dense(NUM_CATEGORIES, activation="softmax"))
 ```
 This configuration yields `loss: 0.1345` and `accuracy: 0.9767`. Here, each epoch finishes in 13 seconds. This may be improved if we run the program on the GPU.
+
+### Experiment data
+| test | epochs | test_size | conv_layers | pool_layers | dense_layers | filters | kernel_size | pool_size | dense_units | dropout_rate | ave_epoch_duration | loss   | accuracy |
+|------|--------|-----------|-------------|-------------|--------------|---------|-------------|-----------|-------------|--------------|--------------------|--------|----------|
+| 1    | 10     | 0.4       | 1           | 0           | 0            | 32      | 3x3         | none      | none        | none         | 6s                 | 1.236  | 0.9062   |
+| 2    | 10     | 0.4       | 1           | 0           | 0            | 64      | 3x3         | none      | none        | none         | 11s                | 1.0221 | 0.9194   |
+| 3    | 10     | 0.4       | 1           | 0           | 0            | 32      | 4x4         | none      | none        | none         | 6s                 | 1.2444 | 0.8847   |
+| 4    | 10     | 0.4       | 1           | 1           | 0            | 32      | 3x3         | 2x2       | none        | none         | 4s                 | 0.5857 | 0.9391   |
+| 5    | 10     | 0.4       | 1           | 1           | 0            | 32      | 3x3         | 3x3       | none        | none         | 3s                 | 0.5076 | 0.9415   |
+| 6    | 10     | 0.4       | 1           | 1           | 0            | 32      | 3x3         | 4x4       | none        | none         | 3s                 | 0.5454 | 0.9176   |
+| 7    | 10     | 0.4       | 1           | 1           | 1            | 32      | 3x3         | 3x3       | 128         | none         | 4s                 | 0.4242 | 0.9363   |
+| 8    | 10     | 0.4       | 1           | 1           | 1            | 32      | 3x3         | 3x3       | 256         | none         | 5s                 | 0.7401 | 0.8732   |
+| 9    | 10     | 0.4       | 1           | 1           | 1            | 32      | 3x3         | 3x3       | 64          | none         | 3s                 | 1.0395 | 0.6873   |
+| 10   | 10     | 0.4       | 1           | 1           | 1            | 32      | 3x3         | 3x3       | 128         | 0.5          | 4s                 | 1.7827 | 0.4393   |
+| 11   | 10     | 0.4       | 1           | 1           | 1            | 32      | 3x3         | 3x3       | 128         | 0.3          | 5s                 | 1.0561 | 0.6743   |
+| 12   | 10     | 0.4       | 1           | 1           | 1            | 32      | 3x3         | 3x3       | 128         | 0.7          | 4s                 | 3.4955 | 0.0549   |
+| 13   | 10     | 0.4       | 1           | 1           | 1            | 32      | 3x3         | 3x3       | 128         | 0.1          | 4s                 | 0.6107 | 0.8163   |
+| 14   | 20     | 0.4       | 1           | 1           | 1            | 32      | 3x3         | 3x3       | 128         | none         | 4S                 | 0.4102 | 0.938    |
+| 15   | 10     | 0.4       | 2           | 1           | 1            | 32      | 3x3         | 3x3       | 128         | none         | 11s                | 0.2212 | 0.9578   |
+| 16   | 10     | 0.4       | 2           | 2           | 1            | 32      | 3x3         | 3x3       | 128         | none         | 9S                 | 0.3265 | 0.9343   |
+| 17   | 10     | 0.4       | 3           | 1           | 1            | 32      | 3x3         | 3x3       | 128         | none         | 15s                | 0.1577 | 0.9673   |
+| 18   | 10     | 0.4       | 1           | 1           | 2            | 32      | 3x3         | 3x3       | 128         | none         | 5s                 | 0.3389 | 0.9337   |
+| 19   | 10     | 0.4       | 1           | 1           | 3            | 32      | 3x3         | 3x3       | 128         | none         | 5s                 | 0.3447 | 0.928    |
+| 20   | 10     | 0.4       | 2           | 1           | 2            | 32      | 3x3         | 3x3       | 128         | none         | 13s                | 0.1345 | 0.9767   |
+
 
 ### Conclusion
 

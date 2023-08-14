@@ -159,6 +159,10 @@ def get_model():
 ```
 This configuration yields `loss: 0.1345` and `accuracy: 0.9767`. Here, each epoch finishes in 13 seconds. This may be improved if we run the program on the GPU.
 
+### Conclusion
+
+There is a trade-off between accuracy, loss, and compute times. The more we pursue better accuracy and loss, the more complexity of computations will increase. If access to good hardware is not an issue, one could make use of Nvidia GPUs. Consumer-grade GPUs nowadays are capable of training models suitable for Stable Diffusion in an hour. Anything simpler than that such as this traffic sign recognition project is highly feasible.
+
 ### Experiment data
 | test | epochs | test_size | conv_layers | pool_layers | dense_layers | filters | kernel_size | pool_size | dense_units | dropout_rate | ave_epoch_duration | loss   | accuracy |
 |------|--------|-----------|-------------|-------------|--------------|---------|-------------|-----------|-------------|--------------|--------------------|--------|----------|
@@ -182,8 +186,3 @@ This configuration yields `loss: 0.1345` and `accuracy: 0.9767`. Here, each epoc
 | 18   | 10     | 0.4       | 1           | 1           | 2            | 32      | 3x3         | 3x3       | 128         | none         | 5s                 | 0.3389 | 0.9337   |
 | 19   | 10     | 0.4       | 1           | 1           | 3            | 32      | 3x3         | 3x3       | 128         | none         | 5s                 | 0.3447 | 0.928    |
 | 20   | 10     | 0.4       | 2           | 1           | 2            | 32      | 3x3         | 3x3       | 128         | none         | 13s                | 0.1345 | 0.9767   |
-
-
-### Conclusion
-
-There is a trade-off between accuracy, loss, and compute times. The more we pursue better accuracy and loss, the complexity of computations will increase. If access to good hardware is not an issue, one could make use of Nvidia GPUs. Consumer-grade GPUs nowadays are capable of training models suitable for Stable Diffusion in an hour. Anything simpler than that such as this traffic sign recognition project is highly feasible.

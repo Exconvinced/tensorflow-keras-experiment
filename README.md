@@ -1,4 +1,4 @@
-## My CS50AI Tensorflow Experiment
+# My CS50AI TensorFlow Experiment
 
 ### Table of Contents
 - [Overview](#overview)

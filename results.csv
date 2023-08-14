@@ -1,0 +1,21 @@
+﻿test,epochs,test_size,conv_layers,pool_layers,dense_layers,filters,kernel_size,pool_size,dense_units,dropout_rate,ave_epoch_duration,loss,accuracy,remarks
+1,10,0.4,1,0,0,32,3x3,none,none,none,6s,1.236,0.9062,base configuration
+2,10,0.4,1,0,0,64,3x3,none,none,none,11s,1.0221,0.9194,longer compute time with no significant improvement
+3,10,0.4,1,0,0,32,4x4,none,none,none,6s,1.2444,0.8847,"unchanged loss, decreased accuracy"
+4,10,0.4,1,1,0,32,3x3,2x2,none,none,4s,0.5857,0.9391,"fast compute time, half loss with high accuracy"
+5,10,0.4,1,1,0,32,3x3,3x3,none,none,3s,0.5076,0.9415,"faster compute time, lower loss with higher accuracy"
+6,10,0.4,1,1,0,32,3x3,4x4,none,none,3s,0.5454,0.9176,"increased loss, decreased accuracy"
+7,10,0.4,1,1,1,32,3x3,3x3,128,none,4s,0.4242,0.9363,"significantly lower loss, high accuracy"
+8,10,0.4,1,1,1,32,3x3,3x3,256,none,5s,0.7401,0.8732,"increased loss, decreased accuracy"
+9,10,0.4,1,1,1,32,3x3,3x3,64,none,3s,1.0395,0.6873,"increased loss, decreased accuracy"
+10,10,0.4,1,1,1,32,3x3,3x3,128,0.5,4s,1.7827,0.4393,"increased loss, decreased accuracy"
+11,10,0.4,1,1,1,32,3x3,3x3,128,0.3,5s,1.0561,0.6743,"decreased loss, increased accuracy, but not the best"
+12,10,0.4,1,1,1,32,3x3,3x3,128,0.7,4s,3.4955,0.0549,"increased loss, decreased accuracy"
+13,10,0.4,1,1,1,32,3x3,3x3,128,0.1,4s,0.6107,0.8163,"decreased loss, increased accuracy, but not the best"
+14,20,0.4,1,1,1,32,3x3,3x3,128,none,4S,0.4102,0.938,double the duration with no significant improvement
+15,10,0.4,2,1,1,32,3x3,3x3,128,none,11s,0.2212,0.9578,highly improved loss and accuracy despite long compute time
+16,10,0.4,2,2,1,32,3x3,3x3,128,none,9S,0.3265,0.9343,slightly increased loss and decreased accuracy
+17,10,0.4,3,1,1,32,3x3,3x3,128,none,15s,0.1577,0.9673,highly improved loss and accuracy despite long compute time
+18,10,0.4,1,1,2,32,3x3,3x3,128,none,5s,0.3389,0.9337,low loss and high accuracy at fast compute time
+19,10,0.4,1,1,3,32,3x3,3x3,128,none,5s,0.3447,0.928,no significant improvement
+20,10,0.4,2,1,2,32,3x3,3x3,128,none,13s,0.1345,0.9767,"lowest loss and highest accuracy, long compute time"
